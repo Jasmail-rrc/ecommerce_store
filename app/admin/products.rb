@@ -16,9 +16,10 @@ ActiveAdmin.register Product do
       f.input :category
       f.input :name
       f.input :description
-      f.input :price
+      f.input :price, input_html: { min: 0.01, step: 0.01 }
       f.input :stock_quantity
     end
+
     f.actions
   end
 end
