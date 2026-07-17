@@ -2,6 +2,18 @@
 
 <p>Shop athletic, casual, and lifestyle footwear from popular brands.</p>
 
+<h2>Browse by Category</h2>
+
+<div style="margin-bottom: 20px;">
+  <% Category.all.each do |category| %>
+    <%= link_to category.name,
+                category_path(category),
+                style: "margin-right: 15px;" %>
+  <% end %>
+</div>
+
+<hr>
+
 <div class="products">
   <% @products.each do |product| %>
     <div class="product-card">
@@ -22,4 +34,7 @@
       <%= link_to "View Product", product_path(product) %>
     </div>
   <% end %>
+</div>
+<div style="margin-top: 30px;">
+  <%= paginate @products %>
 </div>

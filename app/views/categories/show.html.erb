@@ -1,0 +1,24 @@
+<h1><%= @category.name %></h1>
+
+<p><%= @category.description %></p>
+
+<% if @products.any? %>
+  <% @products.each do |product| %>
+    <div style="margin-bottom: 25px;">
+      <h2><%= product.name %></h2>
+
+      <p><%= product.description %></p>
+
+      <p>
+        <strong>Price:</strong>
+        <%= number_to_currency(product.price) %>
+      </p>
+
+      <%= link_to "View Product", product_path(product) %>
+    </div>
+
+    <hr>
+  <% end %>
+<% else %>
+  <p>No products are available in this category.</p>
+<% end %>

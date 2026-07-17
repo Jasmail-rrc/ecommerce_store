@@ -129,6 +129,8 @@ GEM
       cgi (>= 0.3.3)
     error_highlight (0.7.0)
     erubi (1.13.1)
+    faker (3.6.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-aarch64-linux-musl)
     ffi (1.17.4-arm-linux-gnu)
@@ -418,9 +420,11 @@ DEPENDENCIES
   debug
   devise
   error_highlight (>= 0.4.0)
+  faker
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  kaminari
   puma (>= 5.0)
   rails (~> 7.2.3, >= 7.2.3.1)
   rubocop-rails-omakase
