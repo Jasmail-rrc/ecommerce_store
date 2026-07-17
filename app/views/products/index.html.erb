@@ -1,0 +1,25 @@
+<h1>Prairie Kicks</h1>
+
+<p>Shop athletic, casual, and lifestyle footwear from popular brands.</p>
+
+<div class="products">
+  <% @products.each do |product| %>
+    <div class="product-card">
+      <h2><%= product.name %></h2>
+
+      <p>
+        <strong>Category:</strong>
+        <%= product.category.name %>
+      </p>
+
+      <p><%= truncate(product.description, length: 100) %></p>
+
+      <p>
+        <strong>Price:</strong>
+        <%= number_to_currency(product.price) %>
+      </p>
+
+      <%= link_to "View Product", product_path(product) %>
+    </div>
+  <% end %>
+</div>
